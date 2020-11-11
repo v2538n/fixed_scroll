@@ -24,8 +24,8 @@
 			const image5 = image4 + targetHeight;
 			const image6 = image5 + targetHeight;
 			const image7 = image6 + targetHeight;
-			const image8 = image6 + targetHeight;
-			const image9 = image6 + targetHeight;
+			const image8 = image7 + targetHeight;
+			const image9 = image8 + targetHeight;
 
 			window.addEventListener('scroll', animateOnScroll);
 
