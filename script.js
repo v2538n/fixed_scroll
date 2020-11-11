@@ -63,12 +63,12 @@
 
 				if(pageYOffset > image7 && pageYOffset < image8){
 					images.removeClass('visible');
-					images.eq(5).addClass('visible');
+					images.eq(6).addClass('visible');
 				}
 
 				if(pageYOffset > image8 && pageYOffset < image9){
 					images.removeClass('visible');
-					images.eq(5).addClass('visible');
+					images.eq(7).addClass('visible');
 				}
 
 				/*else if (animateTrigger.hasClass('animation_active')) {
