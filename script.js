@@ -7,11 +7,14 @@
 	/* Анимация для вернхнего меню, при скролле страницы */
 
 		function scrollAnimation(){
+
 			const trigger = $('.s1');
 			const triggerHeight = trigger.outerHeight(true);
 
-			const target  = $('.block-fixed');
-			const targetHeight = target.outerHeight(true);
+			
+		/*	const targetHeight = target.outerHeight(true);*/
+/*
+			const stopPoint = $('.s3').offset().top;
 
 
 			const images = $('.content-img-fixed');
@@ -25,16 +28,48 @@
 			const image6 = image5 + targetHeight;
 			const image7 = image6 + targetHeight;
 			const image8 = image7 + targetHeight;
-			const image9 = image8 + targetHeight;
+			const image9 = image8 + targetHeight;*/
+
+			const startPoint = $('.s2').offset().top;
+			const winHeight  = $(window).height();
+			const stopPoint  = ($('.s3').offset().top) - winHeight;
+			const target  	 = $('.block-fixed');
 
 			window.addEventListener('scroll', animateOnScroll);
 
 			function animateOnScroll(params){
 				
-				if(pageYOffset > triggerHeight){
-					target.addClass('fixed_top');
+				console.log('pageOffset ' + pageYOffset);
+				console.log('startPoint ' + startPoint);
 
+			/* больше стартпоинта и меньше стоп поинта*/
+				if(pageYOffset > startPoint && pageYOffset < stopPoint){
+					target.addClass('fixed_top').removeClass('absolute_bottom');
 				} 
+
+			/* больше стартпоинта и больше стоп поинта */
+				else if(pageYOffset > startPoint && pageYOffset > stopPoint) {
+					target.removeClass('fixed_top').addClass('absolute_bottom');
+				} else {
+					target.removeClass('fixed_top');
+					target.removeClass('absolute_bottom');
+				}
+
+
+
+
+
+
+
+				//console.log(pageYOffset	);
+				//console.log($('.s2').offset().top);
+
+				/*if(pageYOffset > triggerHeight && pageYOffset < stopPoint){
+					target.addClass('fixed_top');
+				} else if (pageYOffset > stopPoint) {
+					console.log('stopPoint');
+					target.removeClass('fixed_top').addClass('absolute_bottom');
+				}
 
 				if(pageYOffset > image2 && pageYOffset < image3){
 					images.removeClass('visible');
@@ -69,7 +104,7 @@
 				if(pageYOffset > image8 && pageYOffset < image9){
 					images.removeClass('visible');
 					images.eq(7).addClass('visible');
-				}
+				}*/
 
 				/*else if (animateTrigger.hasClass('animation_active')) {
 					animateTrigger.removeClass('animation_active');
