@@ -4,19 +4,21 @@
 
 		function scrollAnimation(){
 			
-			const target  	 = $('.block-fixed');
+			let target  	 = $('.block-fixed');
 
-			const winHeight  = $(window).height();
-			const tenth      = winHeight / 10;
+			let winHeight  = $(window).height();
+			let tenth      = winHeight / 10;
 
-			const startPoint = $('.s2').offset().top;
-			const stopPoint  = ($('.s3').offset().top) - winHeight;
-
-
+			let startPoint = $('.s2').offset().top;
 			
-			const images        = $('.content-img-fixed');
+			let images        = $('.content-img-fixed');
+
+			let stopPoint = (images.last().offset().top) + (winHeight - (tenth * 4));
+
 			let imagesCount     = images.length;
 			let imagesPoint     = new Array();
+
+			/*let stopPoint  = ($('.s3').offset().top) - (tenth * (imagesCount * 0.2));*/
 
 			let fixedContainer  = $('.fixed-container');
 			let containerHeight = (imagesCount * (winHeight + tenth)) + 'px';
@@ -36,7 +38,7 @@
 
 			imagesPoints();
 
-	/*		console.log('target ' + target);
+			console.log('target ' + target);
 			console.log('winHeight ' + winHeight);
 			console.log('tenth ' + tenth);
 			console.log('startPoint ' + startPoint);
@@ -45,7 +47,7 @@
 			console.log('imagesCount ' + imagesCount);
 			console.log('fixedContainer ' + fixedContainer);
 			console.log('containerHeight ' + containerHeight);
-			console.log('imagesPoint ' + imagesPoint);*/
+			console.log('imagesPoint ' + imagesPoint);
 
 
 			function change_img(){
