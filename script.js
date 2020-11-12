@@ -3,18 +3,25 @@
 
 
 		function scrollAnimation(){
-
-			const trigger = $('.s1');
-			const triggerHeight = trigger.outerHeight(true);
 			
 			const target  	 = $('.block-fixed');
+
 			const winHeight  = $(window).height();
+			const tenth      = winHeight / 10;
+
 			const startPoint = $('.s2').offset().top;
 			const stopPoint  = ($('.s3').offset().top) - winHeight;
+
+
 			
-			const images      = $('.content-img-fixed');
-			let imagesCount   = images.length;
-			let imagesPoint   = new Array();
+			const images        = $('.content-img-fixed');
+			let imagesCount     = images.length;
+			let imagesPoint     = new Array();
+
+			let fixedContainer  = $('.fixed-container');
+			let containerHeight = (imagesCount * (winHeight + tenth)) + 'px';
+
+			fixedContainer.css({'height':containerHeight});
 
 			function imagesPoints(){
 				imagesPoint[0] = startPoint;
@@ -29,6 +36,17 @@
 
 			imagesPoints();
 
+	/*		console.log('target ' + target);
+			console.log('winHeight ' + winHeight);
+			console.log('tenth ' + tenth);
+			console.log('startPoint ' + startPoint);
+			console.log('stopPoint ' + stopPoint);
+			console.log('images ' + images);
+			console.log('imagesCount ' + imagesCount);
+			console.log('fixedContainer ' + fixedContainer);
+			console.log('containerHeight ' + containerHeight);
+			console.log('imagesPoint ' + imagesPoint);*/
+
 
 			function change_img(){
 
@@ -41,38 +59,27 @@
 			}
 
 			function fixed_block(){
-					if(pageYOffset > startPoint && pageYOffset < stopPoint){
-						target.addClass('fixed_top').removeClass('absolute_bottom');
-					} 
+				if(pageYOffset > startPoint && pageYOffset < stopPoint){
+					target.addClass('fixed_top').removeClass('absolute_bottom');
+				} 
 
-					else if(pageYOffset > startPoint && pageYOffset > stopPoint) {
-						target.removeClass('fixed_top').addClass('absolute_bottom');
-					} 
+				else if(pageYOffset > startPoint && pageYOffset > stopPoint) {
+					target.removeClass('fixed_top').addClass('absolute_bottom');
+				} 
 
-					else {
-						target.removeClass('fixed_top');
-						target.removeClass('absolute_bottom');
-					}
+				else {
+					target.removeClass('fixed_top');
+					target.removeClass('absolute_bottom');
 				}
+			}
 
 
 			window.addEventListener('scroll', animateOnScroll);
 
-			function animateOnScroll(params){
+			function animateOnScroll(){
 				fixed_block();
 				change_img();
 			}
-
-			/*function offset(el){
-			 	const rect = el.getBoundingClientRect(),
-			 		scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-			 		scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			 	return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-			 }*/
-
-			/*setTimeout(() => {
-			 	animateOnScroll();
-			}, 300);*/
 		}
 
 		scrollAnimation();

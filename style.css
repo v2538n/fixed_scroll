@@ -61,7 +61,6 @@ p {
 /* fixed */
 
 .fixed-container {
-	height: 8000px;
 	width: 980px;
     margin: 0 auto;
     position: relative;
@@ -69,9 +68,6 @@ p {
 
 /* images */
 
-.block-fixed {
-	/*z-index: -99;*/
-}
 
 .container-images {
 	position: relative;
@@ -91,7 +87,6 @@ p {
 .content-img-fixed img {
 	width: 100%;
 	max-width: 100%;
-	/*height: inherit;*/
 	object-fit: cover;
 	margin: 10vh 0;
 }
