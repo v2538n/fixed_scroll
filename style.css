@@ -48,9 +48,9 @@ p {
 
 .s1-block {
 	height: 200px;
-	width: 33%;
+	width: 29%;
 	background: #aaa;
-	margin-bottom: 20px;
+	margin: 20px;
 }
 
 .s2 {
@@ -113,9 +113,11 @@ p {
     justify-content: center;
 }
 
-.text-fixed p:first-child {
+.text-fixed p:first-child  {
 	padding-top: 130vh;
+	margin-bottom: 80vh;
 }
+
 
 .text-fixed span {
     width: 40%;
