@@ -10,18 +10,19 @@
 			let tenth      = winHeight / 10;
 
 			let startPoint = $('.s2').offset().top;
+			let stopPoint  = $('.s3').offset().top - winHeight;
 			
+			/*let stopPoint = (images.last().offset().top) + (winHeight - (tenth * 4));*/
+			/*let stopPoint  = ($('.s3').offset().top) - (tenth * (imagesCount * 0.2));*/
+
 			let images        = $('.content-img-fixed');
-
-			let stopPoint = (images.last().offset().top) + (winHeight - (tenth * 4));
-
 			let imagesCount     = images.length;
 			let imagesPoint     = new Array();
 
-			/*let stopPoint  = ($('.s3').offset().top) - (tenth * (imagesCount * 0.2));*/
 
 			let fixedContainer  = $('.fixed-container');
-			let containerHeight = (imagesCount * (winHeight + tenth)) + 'px';
+			/*let containerHeight = (imagesCount * (winHeight + tenth)) + 'px';*/
+			let containerHeight = (imagesCount * winHeight) + 'px';
 
 			fixedContainer.css({'height':containerHeight});
 
