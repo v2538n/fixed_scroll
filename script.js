@@ -7,13 +7,10 @@
 			let target  	 = $('.block-fixed');
 
 			let winHeight  = $(window).height();
-			let tenth      = winHeight / 10;
 
 			let startPoint = $('.s2').offset().top;
 			let stopPoint  = $('.s3').offset().top - winHeight;
 			
-			/*let stopPoint = (images.last().offset().top) + (winHeight - (tenth * 4));*/
-			/*let stopPoint  = ($('.s3').offset().top) - (tenth * (imagesCount * 0.2));*/
 
 			let images        = $('.content-img-fixed');
 			let imagesCount     = images.length;
@@ -21,9 +18,8 @@
 
 
 			let fixedContainer  = $('.fixed-container');
-			/*let containerHeight = (imagesCount * (winHeight + tenth)) + 'px';*/
 			let containerHeight = (imagesCount * winHeight) + 'px';
-
+			
 			fixedContainer.css({'height':containerHeight});
 
 			function imagesPoints(){
@@ -39,17 +35,6 @@
 
 			imagesPoints();
 
-			console.log('target ' + target);
-			console.log('winHeight ' + winHeight);
-			console.log('tenth ' + tenth);
-			console.log('startPoint ' + startPoint);
-			console.log('stopPoint ' + stopPoint);
-			console.log('images ' + images);
-			console.log('imagesCount ' + imagesCount);
-			console.log('fixedContainer ' + fixedContainer);
-			console.log('containerHeight ' + containerHeight);
-			console.log('imagesPoint ' + imagesPoint);
-
 
 			function change_img(){
 
@@ -57,6 +42,12 @@
 					if(pageYOffset > item && pageYOffset < stopPoint){
 						images.removeClass('visible');
 						images.eq(i).addClass('visible');
+					} else if(pageYOffset > stopPoint) {
+						images.removeClass('visible');
+						images.last().addClass('visible');
+					} else if(pageYOffset < startPoint){
+						images.removeClass('visible');
+						images.first().addClass('visible');
 					}
 				});
 			}
