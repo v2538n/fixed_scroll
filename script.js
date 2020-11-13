@@ -2,19 +2,19 @@
 	$(document).ready(function(){
 
 
-		function scrollAnimation(){
+		function scrollAnimation(startPointClass, stopPointClass){
 			
-			let target  	 = $('.block-fixed');
+			let target  	  = $('.block-fixed');
 
-			let winHeight  = $(window).height();
+			let winHeight     = $(window).height();
 
-			let startPoint = $('.s2').offset().top;
-			let stopPoint  = $('.s3').offset().top - winHeight;
+			let startPoint    = $('.'+startPointClass).offset().top;
+			let stopPoint     = $('.'+stopPointClass).offset().top - winHeight;
 			
 
 			let images        = $('.content-img-fixed');
-			let imagesCount     = images.length;
-			let imagesPoint     = new Array();
+			let imagesCount   = images.length;
+			let imagesPoint   = new Array();
 
 
 			let fixedContainer  = $('.fixed-container');
@@ -76,6 +76,6 @@
 			}
 		}
 
-		scrollAnimation();
+		scrollAnimation('s2','s3');
 	});
 })(jQuery);
