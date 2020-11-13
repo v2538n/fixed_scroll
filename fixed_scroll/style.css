@@ -1,20 +1,19 @@
 /* fixed */
 
 .fixed-container {
-	width: 980px;
+	/*width: 980px;*/
     margin: 0 auto;
     position: relative;
 }
 
 /* images */
 
-
 .container-images {
 	position: relative;
 }
 
 .content-img-fixed {
-	width: 980px;
+	/*width: 980px;*/
     margin: 0 auto;
     height: 100vh;
     display: flex;

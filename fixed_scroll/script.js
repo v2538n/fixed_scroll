@@ -12,7 +12,7 @@
 	
 */
 
-function scrollAnimation(startPointClass, stopPointClass){
+function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 			
 	let target  	  = $('.block-fixed');
 
@@ -26,11 +26,13 @@ function scrollAnimation(startPointClass, stopPointClass){
 	let imagesCount   = images.length;
 	let imagesPoint   = new Array();
 
-
 	let fixedContainer  = $('.fixed-container');
 	let containerHeight = (imagesCount * winHeight) + 'px';
 	
 	fixedContainer.css({'height':containerHeight});
+
+	$('.fixed-container').css({'width':containerWidth});
+	$('.content-img-fixed').css({'width':containerWidth});
 
 	function imagesPoints(){
 		imagesPoint[0] = startPoint;
