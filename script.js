@@ -67,6 +67,8 @@
 				}
 			}
 
+			fixed_block();
+			change_img();
 
 			window.addEventListener('scroll', animateOnScroll);
 
