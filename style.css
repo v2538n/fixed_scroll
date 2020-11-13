@@ -106,6 +106,9 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .7s ease; 
+    position: relative;
+    bottom: 0;
 }
 
 .text-fixed p:first-child  {
@@ -122,7 +125,6 @@ p {
     margin-bottom: 130vh;
     font-size: 1.6rem;
     line-height: 2.4rem;
-    transition: .7s ease; 
 }
 
 
@@ -143,8 +145,9 @@ p {
 	top: inherit!important;
 }
 
-.absolute_bottom + .text-fixed span {
-	margin-bottom: 200vh;
+.absolute_bottom + .text-fixed p {
+	position: relative;
+	bottom: 40vh;
 }
 
 
