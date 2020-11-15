@@ -1,8 +1,6 @@
 /* fixed */
 
 .fixed-container {
-	/*width: 980px;*/
-    margin: 0 auto;
     position: relative;
 }
 
@@ -13,21 +11,19 @@
 }
 
 .content-img-fixed {
-	/*width: 980px;*/
-    margin: 0 auto;
+    width: 100%;
     height: 100vh;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: all 1s;
+    transition: opacity .7s;
 }
 
 .content-img-fixed img {
-	width: 100%;
 	max-width: 100%;
 	object-fit: cover;
-/*	margin: 10vh 0;*/
 }
 
 /* text */
@@ -46,8 +42,8 @@
     align-items: center;
     justify-content: center;
     transition: .7s ease; 
-    position: relative;
-    bottom: 0;
+    /*position: relative;
+    bottom: 0;*/
 }
 
 .text-fixed p:first-child  {
@@ -66,8 +62,6 @@
     line-height: 2.4rem;
 }
 
-
-
 .fixed_top, 
 .fixed_top .content-img-fixed
 {
@@ -84,10 +78,10 @@
 	top: inherit!important;
 }
 
-.absolute_bottom + .text-fixed p {
+/*.absolute_bottom + .text-fixed p {
 	position: relative;
 	bottom: 40vh;
-}
+}*/
 
 
 .visible {

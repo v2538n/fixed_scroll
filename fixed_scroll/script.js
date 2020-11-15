@@ -12,6 +12,39 @@
 	
 */
 
+/*
+$.fn.scrollAnimation = function(){
+	
+}*/
+
+
+
+$(window).on('load', resizeFixImg);
+$(window).on('resize', resizeFixImg);
+
+
+function resizeFixImg() {
+
+	let 
+		wW              = $(window).width(),
+		wH              = $(window).height(),
+		images      	= $('.content-img-fixed'),
+		imagesCount  	= images.length,
+
+		fixedContainer  = $('.fixed-container'),
+		containerOffset = fixedContainer.offset().left,
+		containerWidth  = wW - (containerOffset * 2),
+		containerHeight = (imagesCount * wH) + 'px';
+
+
+
+	fixedContainer.css({'height': containerHeight});
+	images.css({'width':containerWidth});
+
+	/*console.log('resize: ' + ' - ' +wW+ ' - ' +wH+ ' - ' +images+ ' - ' + imagesCount+ ' - ' +containerOffset+ ' - ' +containerWidth+ ' - ' +containerHeight);*/
+}
+
+
 function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 			
 	let target  	  = $('.block-fixed');
@@ -27,12 +60,13 @@ function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 	let imagesPoint   = new Array();
 
 	let fixedContainer  = $('.fixed-container');
-	let containerHeight = (imagesCount * winHeight) + 'px';
+	/*let containerHeight = (imagesCount * winHeight) + 'px';*/
 	
-	fixedContainer.css({'height':containerHeight});
 
-	$('.fixed-container').css({'width':containerWidth});
-	$('.content-img-fixed').css({'width':containerWidth});
+	/*fixedContainer.css({'height':containerHeight});
+
+	images.css({'max-width':containerWidth});
+	fixedContainer.css({'max-width':containerWidth});*/
 
 	function imagesPoints(){
 		imagesPoint[0] = startPoint;
@@ -82,10 +116,84 @@ function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 	fixed_block();
 	change_img();
 
-	window.addEventListener('scroll', animateOnScroll);
-
-	function animateOnScroll(){
+	$(window).on('scroll', function(){
 		fixed_block();
 		change_img();
+	});
+}
+
+/*
+function calc(val){
+	return: {
+		testMinus: function(){
+			//va
+		}
 	}
 }
+*/
+
+
+
+
+
+function calckit(initNum) {
+	return {
+		resultNum: initNum,
+		plus: function (b) {
+	  		this.resultNum += b;
+	  		return this;
+		},
+		minus: function(b) {
+	 	 	this.resultNum -= b;
+	  		return this;
+		},
+		res:  function() {
+		 console.log(this.resultNum);
+		}
+	}
+}
+
+
+	function calc(initNum){
+		return {
+			resultNum: initNum,
+
+			plus: function(b){
+				this.resultNum += b;
+				return this;
+			},
+			minus: function(b){
+				this.resultNum -= b;
+			},
+			res: function(){
+				console.log(this.resultNum);
+			}
+		}
+	}
+
+
+
+
+function addClass(className){
+	return {
+		reusltClass: className,	
+
+		strip: function(param){
+			this.reusltClass = 'test-'+ param;
+			return this;
+		},
+
+		res: function(param){
+			console.log(param + this.reusltClass);
+		}
+	}
+}
+
+addClass('className').strip('new-class-name').res('message-');
+
+
+/*calc(5).minus(2).plus(2).res(); // 5
+calc(5).minus(2).minus(2).minus(2).minus(2).minus(2).res(); // -5
+calc(5).minus(1).plus(1).res(); // 5
+calc(5).plus(1).plus(1).res(); // 7
+*/

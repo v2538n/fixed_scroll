@@ -6,12 +6,13 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="fixed_scroll/style.css">
+	<link rel="stylesheet" href="fixed_scroll/media.css">
 </head>
 <body>
 
 	<div class="page">
 		
-		<header class="header"></header>
+		<header class="header" id="header"></header>
 		<main class="main">
 			
 			<div class="section s1">
@@ -38,25 +39,47 @@
 
 			<div class="section s2">
 
-				<div class="fixed-container">
+				<div class="s2-gallery">
+					
+					<div class="fixed-container">
 
 					<div class="block-fixed">
 
 						<div class="container-images">
-							<div class="content-img-fixed "><img src="images/img1.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img2.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img3.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img4.jpg" alt=""></div>
+							
+							<div class="content-img-fixed ">
+								<picture class="img-block-fixed">
+									<source media="(max-width: 320px)" srcset="images/mobile/320/img1_320.jpg, images/mobile/320/img1_320_retina.jpg 2x">
+									<source media="(max-width: 576px)" srcset="images/mobile/576/img1_576.jpg, images/mobile/576/img1_576_retina.jpg 2x">
+                    				<img src="images/img1.jpg" pinger-seen="true">
+                				</picture>
+                			</div>
+							
 
-							<div class="content-img-fixed "><img src="images/img1.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img2.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img3.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img4.jpg" alt=""></div>
+                			<div class="content-img-fixed ">
+								<picture class="img-block-fixed">
+									<source media="(max-width: 320px)" srcset="images/mobile/320/img2_320.jpg, images/mobile/320/img2_320_retina.jpg 2x">
+									<source media="(max-width: 576px)" srcset="images/mobile/576/img2_576.jpg, images/mobile/576/img2_576_retina.jpg 2x">
+                    				<img src="images/img2.jpg" pinger-seen="true">
+                				</picture>
+                			</div>
 
-							<div class="content-img-fixed "><img src="images/img1.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img2.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img3.jpg" alt=""></div>
-							<div class="content-img-fixed "><img src="images/img4.jpg" alt=""></div>
+                			<div class="content-img-fixed ">
+								<picture class="img-block-fixed">
+									<source media="(max-width: 320px)" srcset="images/mobile/320/img3_320.jpg, images/mobile/320/img3_320_retina.jpg 2x">
+									<source media="(max-width: 576px)" srcset="images/mobile/576/img3_576.jpg, images/mobile/576/img3_576_retina.jpg 2x">
+                    				<img src="images/img3.jpg" pinger-seen="true">
+                				</picture>
+                			</div>
+
+                			<div class="content-img-fixed ">
+								<picture class="img-block-fixed">
+									<source media="(max-width: 320px)" srcset="images/mobile/320/img4_320.jpg, images/mobile/320/img4_320_retina.jpg 2x">
+									<source media="(max-width: 576px)" srcset="images/mobile/576/img4_576.jpg, images/mobile/576/img4_576_retina.jpg 2x">
+                    				<img src="images/img4.jpg" pinger-seen="true">
+                				</picture>
+                			</div>
+
 
 						</div> <!-- /container-images -->
 
@@ -69,19 +92,12 @@
 						<p><span>Text 3</span></p>
 						<p><span>Text 4</span></p>
 
-						<p><span>Text 5</span></p>
-						<p><span>Text 6</span></p>
-						<p><span>Text 7</span></p>
-						<p><span>Text 8</span></p>
-
-						<p><span>Text 9</span></p>
-						<p><span>Text 10</span></p>
-						<p><span>Text 11</span></p>
-						<p><span>Text 12</span></p>
 
 					</div> <!-- /text-fixed -->
 
 				</div> <!-- fixed-container -->
+
+				</div> <!-- /s2-gallery-->
 
 			</div> <!-- /section s2-->
 
