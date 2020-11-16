@@ -23,12 +23,13 @@ p {
 
 .header {
 	padding: 20px;
+	min-height: 100px;
 	background: #ddd;
 }
 
 .main {
 	padding: 20px;
-	background: #ccc;
+	background: #eee;
 }
 
 .section {
@@ -70,6 +71,7 @@ p {
 }
 
 .footer {
+	min-height: 100px;
 	padding: 20px;
 	background: #ddd;
 }

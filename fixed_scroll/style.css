@@ -78,10 +78,10 @@
 	top: inherit!important;
 }
 
-/*.absolute_bottom + .text-fixed p {
+.absolute_bottom + .text-fixed p {
 	position: relative;
-	bottom: 40vh;
-}*/
+	bottom: 30vh;
+}
 
 
 .visible {

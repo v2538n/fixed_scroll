@@ -41,6 +41,10 @@
         height: 100vh;
     }
 
+
+    .content-img-fixed img {
+        width: 100%;
+    }
     
 }
 
