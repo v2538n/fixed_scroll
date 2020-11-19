@@ -58,8 +58,10 @@
     padding: 20px;
     margin: 0 40px;
     margin-bottom: 130vh;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+   /* font-size: 1.6rem;
+    line-height: 2.4rem;*/
+    font-size: 18px;
+    line-height: 20px;
 }
 
 .fixed_top, 
