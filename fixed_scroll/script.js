@@ -80,7 +80,6 @@ function scrollAnimation(startPointClass, stopPointClass){
 			
 	let target  	  = $('.'+startPointClass).find($('.block-fixed'));
 
-	console.log('TARGET - '+target );
 
 	/*let winHeight     = $(window).height();
 
@@ -96,14 +95,14 @@ function scrollAnimation(startPointClass, stopPointClass){
 */
 
 
+    target.css({'border':'10px solid #f00'});
 
-	console.log('target' + target);
-	console.log('winHeight' + winHeight);
+	/*console.log('winHeight' + winHeight);
 	console.log('startPoint' + startPoint);
 	console.log('stopPoint' + stopPoint);
 	console.log('images' + images);
 	console.log('imagesCount' + imagesCount);
-	console.log('fixedContainer' + fixedContainer);
+	console.log('fixedContainer' + fixedContainer);*/
 
 	/*let containerHeight = (imagesCount * winHeight) + 'px';*/
 	
@@ -113,7 +112,7 @@ function scrollAnimation(startPointClass, stopPointClass){
 	images.css({'max-width':containerWidth});
 	fixedContainer.css({'max-width':containerWidth});*/
 
-	function imagesPoints(){
+	/*function imagesPoints(){
 		imagesPoint[0] = startPoint;
 
 		let prevInc = 0;
@@ -164,7 +163,7 @@ function scrollAnimation(startPointClass, stopPointClass){
 	$(window).on('scroll', function(){
 		fixed_block();
 		change_img();
-	});
+	});*/
 }
 
 scrollAnimation('s2','s3');
