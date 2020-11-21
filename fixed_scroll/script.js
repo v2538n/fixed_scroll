@@ -80,7 +80,9 @@ function scrollAnimation(startPointClass, stopPointClass){
 			
 	let target  	  = $('.'+startPointClass).find($('.block-fixed'));
 
-	let winHeight     = $(window).height();
+	console.log('TARGET - '+target );
+
+	/*let winHeight     = $(window).height();
 
 	let startPoint    = $('.'+startPointClass).offset().top;
 	let stopPoint     = $('.'+stopPointClass).offset().top - winHeight;
@@ -91,7 +93,7 @@ function scrollAnimation(startPointClass, stopPointClass){
 	let imagesPoint   = new Array();
 
 	let fixedContainer  = $('.'+startPointClass).find($('.fixed-container'));
-
+*/
 
 
 
