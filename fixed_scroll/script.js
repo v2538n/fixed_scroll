@@ -88,22 +88,22 @@ let secondSlider = new fixScroll('s4', 's5');*/
 		let stopPoint     = $('.'+stopPointClass).offset().top - winHeight;
 		
 
-	/*	let images        = $('.'+startPointClass).find($('.content-img-fixed'));
+		let images        = $('.'+startPointClass).find($('.content-img-fixed'));
 		let imagesCount   = images.length;
 		let imagesPoint   = new Array();
 
-		let fixedContainer  = $('.'+startPointClass).find($('.fixed-container'));*/
+		let fixedContainer  = $('.'+startPointClass).find($('.fixed-container'));
 	
 
 
 	    target.css({'border':'10px solid #f00'});
-
-		console.log('winHeight' + winHeight);
-		console.log('startPoint' + startPoint);
-		console.log('stopPoint' + stopPoint);
-		/*console.log('images' + images);
-		console.log('imagesCount' + imagesCount);
-		console.log('fixedContainer' + fixedContainer);*/
+	    console.log('target ':taget);
+		console.log('winHeight ' + winHeight);
+		console.log('startPoint ' + startPoint);
+		console.log('stopPoint ' + stopPoint);
+		console.log('images ' + images);
+		console.log('imagesCount ' + imagesCount);
+		console.log('fixedContainer ' + fixedContainer);
 
 		/*let containerHeight = (imagesCount * winHeight) + 'px';*/
 		
