@@ -27,7 +27,10 @@ let firstSlider  = new fixScroll('s2', 's3');
 let secondSlider = new fixScroll('s4', 's5');*/
 
 
-$(window).on('load', function(){
+(function($){
+	$(document).ready(function(){
+
+		$(window).on('load', function(){
 	resizeFixImg('s2');
 	resizeFixImg('s4');
 });
@@ -73,7 +76,7 @@ function resizeFixImg(startPointClass) {
 }
 
 
-function scrollAnimation(startPointClass, stopPointClass, containerWidth){
+function scrollAnimation(startPointClass, stopPointClass){
 			
 	let target  	  = $('.'+startPointClass).find($('.block-fixed'));
 
@@ -161,6 +164,14 @@ function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 		change_img();
 	});
 }
+
+scrollAnimation('s2','s3');
+scrollAnimation('s4','s5');
+
+	});
+})(jQuery);
+
+
 
 
 /*
