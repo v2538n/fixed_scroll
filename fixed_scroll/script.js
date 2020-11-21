@@ -88,6 +88,18 @@ function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 	let imagesPoint   = new Array();
 
 	let fixedContainer  = $('.'+startPointClass).find($('.fixed-container'));
+
+
+
+
+	console.log('target' + target);
+	console.log('winHeight' + winHeight);
+	console.log('startPoint' + startPoint);
+	console.log('stopPoint' + stopPoint);
+	console.log('images' + images);
+	console.log('imagesCount' + imagesCount);
+	console.log('fixedContainer' + fixedContainer);
+
 	/*let containerHeight = (imagesCount * winHeight) + 'px';*/
 	
 
@@ -149,6 +161,7 @@ function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 		change_img();
 	});
 }
+
 
 /*
 function calc(val){
