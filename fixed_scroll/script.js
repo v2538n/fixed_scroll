@@ -17,37 +17,65 @@ $.fn.scrollAnimation = function(){
 	
 }*/
 
+/*
+function fixScroll(startPointClass, stopPointClass){
+	this.startPointClass = startPointClass;
+	this.stopPointClass  = stopPointClass;	
+}
+
+let firstSlider  = new fixScroll('s2', 's3');
+let secondSlider = new fixScroll('s4', 's5');*/
 
 
-$(window).on('load', resizeFixImg);
-$(window).on('resize', resizeFixImg);
+$(window).on('load', function(){
+	resizeFixImg('s2');
+	resizeFixImg('s4');
+});
+$(window).on('resize', function(){
+	resizeFixImg('s2');
+	resizeFixImg('s4');
+});
 
-
-function resizeFixImg() {
+function resizeFixImg(startPointClass) {
 
 	let 
 		wW              = $(window).width(),
 		wH              = $(window).height(),
-		images      	= $('.content-img-fixed'),
+		target          = $('.'+startPointClass),
+		images      	= target.find($('.content-img-fixed')),
 		imagesCount  	= images.length,
 
-		fixedContainer  = $('.fixed-container'),
+		fixedContainer  = target.find($('.fixed-container')),
 		containerOffset = fixedContainer.offset().left,
 		containerWidth  = wW - (containerOffset * 2),
 		containerHeight = (imagesCount * wH) + 'px';
 
 
+		console.log('wW' + wW);
+		console.log('wH' + wH);
+		console.log('target' + target);
+		console.log('images' + images);
+		console.log('imagesCount' + imagesCount);
+		console.log('fixedContainer' + fixedContainer);
+		console.log('containerOffset' + containerOffset);
+		console.log('containerWidth' + containerWidth);
+		console.log('containerHeight' + containerHeight);
+
+
+
+		console.log(' ------------- ');
+		console.log(' Отбивка ');
+		console.log(' ------------- ');
 
 	fixedContainer.css({'height': containerHeight});
 	images.css({'width':containerWidth});
 
-	/*console.log('resize: ' + ' - ' +wW+ ' - ' +wH+ ' - ' +images+ ' - ' + imagesCount+ ' - ' +containerOffset+ ' - ' +containerWidth+ ' - ' +containerHeight);*/
 }
 
 
 function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 			
-	let target  	  = $('.block-fixed');
+	let target  	  = $('.'+startPointClass).find($('.block-fixed'));
 
 	let winHeight     = $(window).height();
 
@@ -55,11 +83,11 @@ function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 	let stopPoint     = $('.'+stopPointClass).offset().top - winHeight;
 	
 
-	let images        = $('.content-img-fixed');
+	let images        = $('.'+startPointClass).find($('.content-img-fixed'));
 	let imagesCount   = images.length;
 	let imagesPoint   = new Array();
 
-	let fixedContainer  = $('.fixed-container');
+	let fixedContainer  = $('.'+startPointClass).find($('.fixed-container'));
 	/*let containerHeight = (imagesCount * winHeight) + 'px';*/
 	
 
@@ -136,7 +164,7 @@ function calc(val){
 
 
 
-function calckit(initNum) {
+/*function calckit(initNum) {
 	return {
 		resultNum: initNum,
 		plus: function (b) {
@@ -189,7 +217,7 @@ function addClass(className){
 	}
 }
 
-addClass('className').strip('new-class-name').res('message-');
+addClass('className').strip('new-class-name').res('message-');*/
 
 
 /*calc(5).minus(2).plus(2).res(); // 5
