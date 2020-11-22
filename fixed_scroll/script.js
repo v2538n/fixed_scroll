@@ -51,21 +51,6 @@ function resizeFixImg(startPointClass) {
 		containerHeight = (imagesCount * wH) + 'px';
 
 
-		console.log('wW' + wW);
-		console.log('wH' + wH);
-		console.log('target' + target);
-		console.log('images' + images);
-		console.log('imagesCount' + imagesCount);
-		console.log('fixedContainer' + fixedContainer);
-		console.log('containerOffset' + containerOffset);
-		console.log('containerWidth' + containerWidth);
-		console.log('containerHeight' + containerHeight);
-
-
-
-		console.log(' ------------- ');
-		console.log(' Отбивка ');
-		console.log(' ------------- ');
 
 	fixedContainer.css({'height': containerHeight});
 	images.css({'width':containerWidth});
@@ -76,18 +61,19 @@ function resizeFixImg(startPointClass) {
 function scrollAnimation(startPointClass, stopPointClass, containerWidth){
 			
 	let target  	  = $('.'+startPointClass).find($('.block-fixed'));
+	let stop          = $('.'+stopPointClass);
 
 	let winHeight     = $(window).height();
 
-	let startPoint    = $('.'+startPointClass).offset().top;
-	let stopPoint     = $('.'+stopPointClass).offset().top - winHeight;
+	let startPoint    = target.offset().top;
+	let stopPoint     = stop.offset().top - winHeight;
 	
 
-	let images        = $('.'+startPointClass).find($('.content-img-fixed'));
+	let images        = target.find($('.content-img-fixed'));
 	let imagesCount   = images.length;
 	let imagesPoint   = new Array();
 
-	let fixedContainer  = $('.'+startPointClass).find($('.fixed-container'));
+	let fixedContainer  = target.find($('.fixed-container'));
 	/*let containerHeight = (imagesCount * winHeight) + 'px';*/
 	
 
